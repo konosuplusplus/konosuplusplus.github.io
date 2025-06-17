@@ -1,0 +1,10 @@
+title: KonosuPlusPlus 
+description:  鴻巣発。技術と地域をやわらかくつなぐ、新たなエンジニアリングの形。
+baseurl: ""
+url: "https://konosuplusplus.github.io"
+theme: minima
+sass:
+  style: compressed
+plugins:
+  - jekyll-sitemap
+

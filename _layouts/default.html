@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ page.description | default: site.description }}">
+
+    <!-- フォントとスタイル -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    <!-- Favicon / Apple -->
+    <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+
+  <body>
+  <header class="site-header">
+  <div class="logo-row">
+    <a href="{{ '/' | relative_url }}" class="logo-link">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="ロゴ" class="site-logo">
+    </a>
+  </div>
+
+  <div class="menu-row">
+    <!-- 🌞🌙 テーマ切替ボタン -->
+    <button id="modeToggle" class="icon-toggle" aria-label="テーマ切替">
+      <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- ハンバーガーメニュー -->
+    <button class="menu-toggle" aria-label="メニューを開く">&#9776;</button>
+  </div>
+
+  <nav class="site-nav">
+    <ul class="nav-list">
+      <li><a href="{{ '/' | relative_url }}">トップページ</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">理念</a></li>
+      <li><a href="https://bousai.konosuplus.com">防災</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+    <main class="site-content container">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://x.com/konosuplus" target="_blank" aria-label="X"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://instagram.com/konosuplus" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/konosuplus" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://github.com/konosuplusplus" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    const themeToggle = document.getElementById('modeToggle');
+    const html = document.documentElement;
+
+    // ✅ 初期テーマ設定（保存 or システム優先）
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      html.classList.add(savedTheme);
+    } else {
+      html.classList.add(
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      );
+    }
+
+    // ✅ アイコンを現在のテーマに応じて更新
+    themeToggle.innerHTML = html.classList.contains('dark')
+      ? '<i class="fas fa-moon"></i>'
+      : '<i class="fas fa-sun"></i>';
+
+    // ✅ ハンバーガー開閉
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+
+    // ✅ テーマ切り替え
+    themeToggle.addEventListener('click', () => {
+      const isDark = html.classList.contains('dark');
+      html.classList.toggle('dark');
+      html.classList.toggle('light');
+
+      // アイコン更新
+      themeToggle.innerHTML = isDark
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+
+      // 保存
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  });
+</script>
+
+  </body>
+</html>

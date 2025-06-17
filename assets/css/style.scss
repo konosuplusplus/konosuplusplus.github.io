@@ -1,0 +1,244 @@
+---
+---
+
+/* === ブランドカラー（konosuplusplus用） === */
+$brand-base: #859900;
+$brand-accent: #b58900;
+
+$light-bg: #eee8d5;
+$light-text: #002b36;
+$light-support: #93a1a1;
+
+$dark-bg: #002b36;
+$dark-text: #eee8d5;
+$dark-support: #586e75;
+
+/* === 共通基本スタイル === */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+code, pre {
+  font-family: 'Fira Code', monospace;
+  border-radius: 4px;
+  padding: 0.2em 0.5em;
+}
+
+/* === テーマ別スタイル === */
+html.light {
+  body {
+    background-color: $light-bg;
+    color: $light-text;
+  }
+
+  code, pre {
+    background-color: $light-support;
+    color: $light-text;
+  }
+
+  h1, h2, h3 {
+    color: $brand-base;
+    margin-top: 0.7em;
+  }
+
+  a {
+    color: $brand-base;
+    text-decoration: underline;
+    &:hover {
+      color: $brand-accent;
+      text-decoration: none;
+    }
+  }
+
+  .site-header,
+  .site-nav {
+    background-color: $light-bg;
+  }
+
+  .site-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: $light-support;
+  }
+
+  .site-nav li a {
+    color: $brand-base;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      color: $brand-accent;
+    }
+  }
+
+  th, td {
+    background-color: $light-bg;
+    border-color: #ccc;
+  }
+}
+
+html.dark {
+  body {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+
+  code, pre {
+    background-color: $dark-support;
+    color: $dark-text;
+  }
+
+  h1, h2, h3 {
+    color: $brand-base;
+  }
+
+  a {
+    color: $brand-accent;
+    &:hover {
+      color: $brand-base;
+    }
+  }
+
+  .site-header,
+  .site-nav {
+    background-color: $dark-bg;
+    border-color:rgba(255, 255, 255, 0.9);
+  }
+
+  .site-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: $dark-support;
+  }
+
+  .site-nav li a {
+    color: $brand-accent;
+    &:hover {
+      color: $brand-base;
+    }
+  }
+
+  th, td {
+    background-color: $dark-bg;
+    border-color: $dark-support;
+  }
+}
+
+/* === ヘッダー構造 === */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: -1.5rem;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.site-logo {
+  height: 56px;
+  display: block;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .site-logo {
+    height: 28px;
+  }
+}
+
+/* === メニューアイコンと表示切り替え === */
+.menu-toggle {
+  font-size: 2rem;
+  height: 64px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $brand-base;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.site-nav {
+  display: none !important;
+  flex-direction: column;
+  padding: 1rem;
+  position: absolute;
+  top: 120px;
+  right: 1rem;
+  width: 200px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.site-nav.open {
+  display: flex !important;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* === テーブル関連 === */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.icon-toggle {
+  all: unset; // デフォルトのbuttonスタイルを完全にリセット
+  cursor: pointer; // アイコンだけの見た目に
+  font-size: 1.5rem;      // ← お好みで調整可（例: 2rem = 約32px）
+  color: $brand-base;
+  line-height: 1;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $brand-accent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

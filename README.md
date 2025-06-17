@@ -1,1 +1,0 @@
-# konosuplusplus.github.io
