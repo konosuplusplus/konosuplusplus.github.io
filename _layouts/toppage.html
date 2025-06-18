@@ -74,9 +74,8 @@
     if (savedTheme) {
       html.classList.add(savedTheme);
     } else {
-      html.classList.add(
-        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      );
+      // html.classList.add(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      html.classList.add('dark');
     }
 
     // ✅ アイコンを現在のテーマに応じて更新
