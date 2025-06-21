@@ -79,6 +79,26 @@ html.light {
     background-color: $light-bg;
     border-color: #ccc;
   }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 480px; /* 小さい画面ではスクロールさせる */
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #eee8d5;
+  }
 }
 
 html.dark {
@@ -123,10 +143,26 @@ html.dark {
     }
   }
 
-  th, td {
-    background-color: $dark-bg;
-    border-color: $dark-support;
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 480px; /* 小さい画面ではスクロールさせる */
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+    white-space: nowrap;
+    background-color: $dark-bg;
+  }
+
 }
 
 /* === ヘッダー構造 === */
