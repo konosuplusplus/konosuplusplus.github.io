@@ -76,23 +76,6 @@ html.light {
   }
 
   th, td {
-    background-color: $light-bg;
-    border-color: #ccc;
-  }
-
-  .table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1.5rem;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 480px; /* 小さい画面ではスクロールさせる */
-  }
-
-  th, td {
     border: 1px solid #ccc;
     padding: 0.5rem;
     text-align: left;
@@ -141,18 +124,6 @@ html.dark {
     &:hover {
       color: $brand-base;
     }
-  }
-
-  .table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 1.5rem;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 480px; /* 小さい画面ではスクロールさせる */
   }
 
   th, td {
@@ -245,20 +216,16 @@ html.dark {
 .table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  max-width: 100%;
   margin-bottom: 1.5rem;
 }
 
 table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
   min-width: 480px;
 }
 
-th, td {
-  padding: 0.5rem;
-  text-align: left;
-  white-space: nowrap;
-}
 
 .icon-toggle {
   all: unset; // デフォルトのbuttonスタイルを完全にリセット
