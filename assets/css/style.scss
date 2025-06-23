@@ -141,7 +141,19 @@ html.dark {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
+
+.site-content {
+  padding-top: 80px; 
+}
+
 
 .logo-row {
   display: flex;
@@ -161,9 +173,10 @@ html.dark {
 }
 
 .site-logo {
-  height: 56px;
+  height: 48px;
   display: block;
-  margin-top: 4px;
+  margin-top: 1px;
+  margin-left: 1.7rem;
 }
 
 @media (max-width: 600px) {
