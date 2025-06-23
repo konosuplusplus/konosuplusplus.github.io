@@ -38,9 +38,10 @@ permalink: /blog/
 <style>
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .blog-card {
@@ -53,6 +54,9 @@ permalink: /blog/
   transition: box-shadow 0.2s ease;
   color: inherit;
   border: 1px solid #e0e0e0;
+  max-width: 600px;     /* 画像サイズに合わせて上限を設定 */
+  width: 100%;          /* 親要素にフィット（スマホ対応） */
+  margin: 0 auto;       /* 中央寄せ */
 }
 
 .blog-card:hover {
@@ -61,21 +65,24 @@ permalink: /blog/
 
 .thumbnail-wrapper {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 3 / 2; /* サムネ画像の比率に合わせて高さ自動調整 */
   overflow: hidden;
   background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .thumbnail {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; 
   display: block;
 }
 
 .thumbnail-placeholder {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 3 / 2;
   background-color: #ddd;
   color: #888;
   display: flex;
