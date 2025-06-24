@@ -226,18 +226,16 @@ html.dark {
 }
 
 /* === テーブル関連 === */
-.table-wrapper {
+table {
+  display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
   max-width: 100%;
-  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+  min-width: 600px;
 }
 
-table {
-  width: auto;
-  border-collapse: collapse;
-  min-width: 480px;
-}
 
 
 .icon-toggle {
@@ -257,4 +255,38 @@ table {
   &:focus {
     outline: none;
   }
+}
+
+/* === コードブロック（複数行コード） === */
+pre {
+  background-color: #f5f5f5;
+  color: #2d2d2d;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow-x: auto;         /* 横スクロール対応 */
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+/* pre内のcode（通常Jekyllではこの形式） */
+pre code {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  color: inherit;
+  white-space: pre;
+}
+
+/* === インラインコード（`ls` のような1行） === */
+code {
+  background-color: #eee8d5;
+  color: #002b36;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-family: 'Fira Code', monospace;
 }

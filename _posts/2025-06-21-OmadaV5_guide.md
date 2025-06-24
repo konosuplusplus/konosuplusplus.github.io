@@ -4,7 +4,7 @@ date: 2025-06-18
 category_slug: howto
 category_name: 技術ノウハウ
 tags: [TP-Link, Omada, WiFi]
-description: Version5 以降での認証セッションの注意点を詳しく解説
+description: Omada SDNで自前のキャプティブポータルWi-Fiを構築したい方へ。v5で外部ポータル認証を実装する際に直面する落とし穴と、正しいAPI連携の手順を実体験を交えて丁寧に解説。v4以前との違いやセキュリティ強化の背景にも注目。
 image: /assets/images/thumbnail/2.png
 ---
 
@@ -123,6 +123,7 @@ Omada SDN v5では、外部ポータルの構成が大幅に近代化され、�
 正直に言うと、**外部ポータル開発に必要な情報の多くは、TP-Link公式の以下のドキュメントにすべて集約されていました**：
 
 👉 [FAQ 3231 - External Portal API（Omada SDN v5対応）](https://www.tp-link.com/jp/support/faq/3231/)
+
 👉 [FAQ 2907 - Omada v4互換モード（Compatibility Mode）](https://www.tp-link.com/jp/support/faq/2907/)
 
 ところが当初の私は、検索で見つかる他のブログ記事や過去の公式FAQ（v4やスタンドアロン向け）ばかりを参考にしてしまい、結果として\*\*「全く異なる方式の認証ロジック」を前提に実装を進めてしまいました\*\*。
