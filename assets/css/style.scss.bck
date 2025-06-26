@@ -28,9 +28,112 @@ code, pre {
   padding: 0.2em 0.5em;
 }
 
-h1, h2, h3 {
-  color: $brand-accent;
-  margin-top: 0.7em;
+/* === テーマ別スタイル === */
+html.light {
+  body {
+    background-color: $light-bg;
+    color: $light-text;
+  }
+
+  code, pre {
+    background-color: $light-support;
+    color: $light-text;
+  }
+
+  h1, h2, h3 {
+    color: $brand-base;
+    margin-top: 0.7em;
+  }
+
+  a {
+    color: $brand-base;
+    text-decoration: underline;
+    &:hover {
+      color: $brand-accent;
+      text-decoration: none;
+    }
+  }
+
+  .site-header,
+  .site-nav {
+    background-color: $light-bg;
+  }
+
+  .site-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: $light-support;
+  }
+
+  .site-nav li a {
+    color: $brand-base;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      color: $brand-accent;
+    }
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #eee8d5;
+  }
+}
+
+html.dark {
+  body {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+
+  code, pre {
+    background-color: $dark-support;
+    color: $dark-text;
+  }
+
+  h1, h2, h3 {
+    color: $brand-base;
+  }
+
+  a {
+    color: $brand-accent;
+    &:hover {
+      color: $brand-base;
+    }
+  }
+
+  .site-header,
+  .site-nav {
+    background-color: $dark-bg;
+    border-color:rgba(255, 255, 255, 0.9);
+  }
+
+  .site-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: $dark-support;
+  }
+
+  .site-nav li a {
+    color: $brand-accent;
+    &:hover {
+      color: $brand-base;
+    }
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+    white-space: nowrap;
+    background-color: $dark-bg;
+  }
+
 }
 
 /* === ヘッダー構造 === */
@@ -50,6 +153,7 @@ h1, h2, h3 {
 .site-content {
   padding-top: 80px; 
 }
+
 
 .logo-row {
   display: flex;
@@ -121,16 +225,6 @@ h1, h2, h3 {
   gap: 0.5rem;
 }
 
-a {
-  color: $brand-base;
-  text-decoration: underline;
-  &:hover {
-    color: $brand-accent;
-    text-decoration: none;
-  }
-}
-
-
 /* === テーブル関連 === */
 table {
   display: block;
@@ -142,12 +236,6 @@ table {
   min-width: 600px;
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  text-align: left;
-  white-space: nowrap;
-}
 
 
 .icon-toggle {
@@ -202,81 +290,3 @@ code {
   font-size: 0.95em;
   font-family: 'Fira Code', monospace;
 }
-
-.site-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
-
-
-
-/* === テーマ別スタイル === */
-html.light {
-  body {
-    background-color: $light-bg;
-    color: $light-text;
-  }
-
-  code, pre {
-    background-color: $light-support;
-    color: $light-text;
-  }
-
-  .site-header,
-  .site-nav {
-    background-color: $light-bg;
-  }
-
-  .site-footer {
-    color: $light-support;
-  }
-
-  .site-nav li a {
-    color: $brand-base;
-    font-weight: bold;
-    text-decoration: none;
-    &:hover {
-      color: $brand-accent;
-    }
-  }
-
-  th, td {
-    background-color: $light-bg;
-  }
-}
-
-html.dark {
-  body {
-    background-color: $dark-bg;
-    color: $dark-text;
-  }
-
-  code, pre {
-    background-color: $dark-support;
-    color: $dark-text;
-  }
-
-  .site-header,
-  .site-nav {
-    background-color: $dark-bg;
-    border-color:rgba(255, 255, 255, 0.9);
-  }
-
-  .site-footer {
-    color: $dark-support;
-  }
-
-  .site-nav li a {
-    color: $brand-accent;
-    &:hover {
-      color: $brand-base;
-    }
-  }
-
-  th, td {
-    background-color: $dark-bg;
-  }
-
-}
-
