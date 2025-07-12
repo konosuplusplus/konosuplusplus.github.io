@@ -134,13 +134,13 @@ a {
 /* === テーブル関連 === */
 .table-wrapper { 
   display: block;
+  width:fit-content;
+  max-width:100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
-  max-width: 100%;
 }
 
-.table-wrapper table {
+table {
   width: 100%;
   min-width: 480px;
   border-collapse: collapse;
