@@ -8,8 +8,8 @@ description: 半導体は、単なる素材ではない。“制御できる状�
 image: /assets/images/thumbnail/semicon-chap2.png
 permalink: /semiconductor-philosophy/1-1-Semiconductor-basic/
 ---
-### ― 半導体と哲学の交差点：第1章 1節 ―
-
+### 半導体と哲学の交差点
+### ― 第1章  **「素材から始まる哲学」**　1節 ―
 ---
 
 ### ◆ 導体と絶縁体 ― その性格の違い
@@ -93,4 +93,4 @@ permalink: /semiconductor-philosophy/1-1-Semiconductor-basic/
 
 ### 次回：
 
-👉 **第1章 第2節「[石から始まる知性 ― シリコンの正体](/semiconductor-philosophy/1-2-/)」へつづく**
+👉 **第1章 第2節「[石から始まる知性 ― シリコンの正体](/semiconductor-philosophy/1-2-What-is-silicon/)」へつづく**
