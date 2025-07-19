@@ -94,7 +94,5 @@ permalink: /semiconductor-philosophy/1-2-What-is-silicon/
 
 ### ▶ 次回：
 
-**第1章 第2節「信越化学という静かな巨人」へつづく**  
+**第1章 第2節「[信越化学という静かな巨人 ~哲学編~](/semiconductor-philosophy/1-3-1-silentgiant-whose-name-is-Shinetsu/)」へつづく**  
 — 世界を陰で支える、日本発・超高純度ウェーハの哲学
-
-

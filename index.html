@@ -16,7 +16,7 @@ title: KonosuPlusPlus
 <div class="latest-posts-box">
   <h3 class="latest-title" style="color: #002b36">Latest</h3>
   <div class="blog-list">
-    {% for post in site.posts limit:5 %}
+    {% for post in site.posts limit:6 %}
       <a href="{{ post.url }}" class="blog-card" data-tags="{{ post.tags | join: ',' }}">
         {% if post.image %}
           <div class="thumbnail-wrapper">
