@@ -4,7 +4,7 @@ date: 2025-07-16
 category_slug: semiconductor-philosophy
 category_name: 半導体の哲学
 tags: [半導体, 哲学]
-description: 先端半導体を支える超高純度のシリコンウェーハ作りの哲学に迫る。
+description: 半導体の“土台”であるシリコンウェーハ。その静かなる支柱を極限まで磨き上げるのが、世界最大手・信越化学の技術力です。ポリシリコンの精製から単結晶引き上げ、鏡面加工、全数検査まで─一貫して内製する工程を追いかけます。
 image: /assets/images/thumbnail/semicon-chap5.png
 permalink: /semiconductor-philosophy/1-3-2-silentgiant-whose-name-is-Shinetsu/
 ---
